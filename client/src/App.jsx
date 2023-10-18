@@ -1,15 +1,33 @@
-import { useState } from 'react'
 import './App.css'
 import { Header } from './components/Header'
-import { Notes } from './components/Notes'
+import { NoteListPage } from './pages/NoteListPage'
+import { OneNote } from './pages/OneNote'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <NoteListPage/>,
+  },
+  {
+    path: "/notes/:id",
+    element: <OneNote/>,
+  },
+]);
+
+ 
 function App() {
 
   return (
-    <>
+    <div>  
       <Header/>
-      <Notes/>
-    </>
+      <div className='paper'>
+        <RouterProvider router={router}/>
+      </div>
+    </div>
   )
 }
 
