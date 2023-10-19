@@ -87,12 +87,12 @@ export const OneNote = () => {
       </div>
       <div className="back-link">
         {id !== "new" ? (
-          <button onClick={deleteNote}><TrashIcon/></button>
+          <button onClick={deleteNote} title="delete note"><TrashIcon/></button>
         ) : (
-          <button onClick={createNote}><SaveIconn/></button>
+          <button onClick={createNote} title="save note"><SaveIconn/></button>
         )}
 
-        <Link to={"/"}><LeftIcon/></Link>
+        <Link to={"/"} title="back to notes"><LeftIcon/></Link>
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ export const NoteListPage = () => {
       })}
     </div>
     <div className="add-container">
-      <AddButton/> 
+      <AddButton /> 
     </div>
     </>
   )

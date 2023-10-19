@@ -23,8 +23,8 @@ header{
   background: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   margin: 26px auto 0;
-  max-width: 550px;
-  min-height: 75vh;
+  min-width: 550px;
+  height: 75vh;
   padding: 30px;
   position: relative;
   width: 70vh;
@@ -32,7 +32,6 @@ header{
   flex-direction: column;
   justify-content: space-between;
   & a{
-    padding-left: 10px;
     max-width: 100%;
     text-align: start;
   }
@@ -42,8 +41,10 @@ header{
 .list{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100%;
+  justify-content: start;
   align-items: start;
+  overflow: auto;
 }
 
 a{
