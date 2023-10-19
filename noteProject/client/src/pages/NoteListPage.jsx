@@ -16,7 +16,6 @@ export const NoteListPage = () => {
       .then((res)=> res.json())
       .then((response)=>{
         const notes = response
-        console.log(notes)
         setNotes(notes)
       })
       .catch((error)=>console.log(error))

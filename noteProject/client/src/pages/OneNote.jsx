@@ -18,7 +18,6 @@ export const OneNote = () => {
       .then((res) => res.json())
       .then((response) => {
         const newNote = response;
-        console.log(newNote.body);
         setNote(newNote);
       })
       .catch((error) => console.log(error));
@@ -40,7 +39,7 @@ export const OneNote = () => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(() => navigate('/'));
+    }).then(() => navigate('/home'));
   };
 
   const createNote = () => {
@@ -50,7 +49,7 @@ export const OneNote = () => {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(note)
-    }).then(() => navigate('/'));
+    }).then(() => navigate('/home'));
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
