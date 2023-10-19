@@ -3,11 +3,11 @@ import { Header } from './components/Header'
 import { NoteListPage } from './pages/NoteListPage'
 import { OneNote } from './pages/OneNote'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <NoteListPage/>,
