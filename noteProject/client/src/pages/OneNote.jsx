@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import debounce from "just-debounce-it";
+import { TrashIcon } from "../icons/TrashIcon";
+import { LeftIcon } from "../icons/LeftIcon";
+import { SaveIconn } from "../icons/SaveIcon";
 
 export const OneNote = () => {
   const { id } = useParams();
@@ -24,32 +27,38 @@ export const OneNote = () => {
   };
 
   const updateNote = (newNote) => {
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     fetch(`/api/notes/${id}/update/`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        'X-CSRFToken': csrftoken,
       },
       body: JSON.stringify(newNote),
     });
   };
 
   const deleteNote = () => {
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     fetch(`/api/notes/${id}/delete/`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        'X-CSRFToken': csrftoken,
       },
-    }).then(() => navigate('/home'));
+    }).then(() => navigate('/'));
   };
 
   const createNote = () => {
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     fetch(`/api/notes/create/`, {
       method: "POST",
       headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrftoken,
       },
       body: JSON.stringify(note)
-    }).then(() => navigate('/home'));
+    }).then(() => navigate('/'));
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -78,12 +87,12 @@ export const OneNote = () => {
       </div>
       <div className="back-link">
         {id !== "new" ? (
-          <button onClick={deleteNote}>Delete</button>
+          <button onClick={deleteNote}><TrashIcon/></button>
         ) : (
-          <button onClick={createNote}>Done</button>
+          <button onClick={createNote}><SaveIconn/></button>
         )}
 
-        <Link to={"/"}>Back to notes</Link>
+        <Link to={"/"}><LeftIcon/></Link>
       </div>
     </div>
   );
