@@ -4,7 +4,7 @@ export const Header = () => {
 
   return(
     <header>
-      <h2>Notes App</h2>
+      <h1>Notes App</h1>
     </header>
   )
 }

@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -12,6 +12,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Nanum Pen Script', cursive;
 }
 
 .paper {
@@ -25,14 +26,91 @@ body{
   width: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: start;
-
+  justify-content: space-between;
   & a{
     padding-left: 10px;
+    max-width: 100%;
+    text-align: start;
   }
 
 }
+
+.list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.list-item{
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  transition: 0.25s;
+  & header{
+    overflow: hidden;
+    text-align: start; 
+  }
+  & footer{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+  }
+}
+
+.list-item:hover{
+  background-color: #e0dada;
+  transition: 0.25s;
+}
+
+.list-item::after{
+  content: '';
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 1px;
+  background-color: #000;
+}
+
+h1{
+  font-size: 40px;
+  margin: 0
+}
+
+h2{
+  font-size: 35px;
+  margin: 10px;
+  text-decoration: underline ;
+}
+
+h3{
+  margin: 5px;
+  font-size: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+p{
+  font-size: 25px;
+}
+
+small{
+  font-size: 20px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.75;
+}
+
 .paper:before, .paper:after {
   content: "";
   height: 98%;
@@ -45,12 +123,49 @@ body{
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   left: -5px;
   top: 4px;
-  transform: rotate(-2.5deg);
+  transform: rotate(-6deg);
 }
 .paper:after {
   background: #f6f6f6;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
   right: -3px;
   top: 1px;
-  transform: rotate(1.4deg);
+  transform: rotate(8deg);
 }
+
+.one-note{
+  width: 100%;
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.note-body {
+  width: 100%;
+  height: 28rem;
+}
+
+.one-note textarea{
+  width: 96%;
+  height: 100%;
+  padding: 10px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 20px;
+  border: none;
+  resize: none;
+}
+
+textarea:focus{
+  outline: none;
+}
+
+.back-link{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
