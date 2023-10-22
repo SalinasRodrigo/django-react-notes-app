@@ -28,7 +28,7 @@ export const OneNote = () => {
 
   const updateNote = (newNote) => {
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-    fetch(`/api/notes/${id}/update/`, {
+    fetch(`/api/notes/${id}/`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const OneNote = () => {
 
   const deleteNote = () => {
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-    fetch(`/api/notes/${id}/delete/`, {
+    fetch(`/api/notes/${id}/`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export const OneNote = () => {
 
   const createNote = () => {
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-    fetch(`/api/notes/create/`, {
+    fetch(`/api/notes/`, {
       method: "POST",
       headers: {
           'Content-Type': 'application/json',
